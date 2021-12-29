@@ -41,7 +41,7 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: process.env.REACT_APP_BSCSCAN_API_KEY,
+    apiKey: process.env.REACT_APP_POLYGONSCAN_API_KEY,
   },
   solidity: {
     compilers: [

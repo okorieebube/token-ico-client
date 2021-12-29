@@ -69,18 +69,13 @@ export const crowdsale = {
         Crowdsale.abi,
         signer
       );
-      let decimal = await token.decimals();
       let name = await token.name();
       let tokenPrice = await crowdsale.tokenPrice();
 
       // (numberOfTokens * 10 ** 18).toString(),
-      let result = await contractInstance.buyTokens(
-        numberOfTokens ,
-        referrer,
-        {
-          value: (numberOfTokens * tokenPrice.message).toString(),
-        }
-      );
+      let result = await contractInstance.buyTokens(numberOfTokens, referrer, {
+        value: (numberOfTokens * tokenPrice.message).toString(),
+      });
 
       return {
         error: false,

@@ -74,7 +74,7 @@ contract LinkTokenCrowdsale {
         payable
     {
         require(
-            msg.value == multiply(_numberOfTokens, tokenPrice),
+            msg.value == multiply(_numberOfTokens / 10 ** decimals, tokenPrice),
             "Crowdsale: msg.value must equal number of tokens in wei!"
         );
         require(

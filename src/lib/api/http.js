@@ -18,12 +18,8 @@ export const Request = {
   get: async (url, config = {}) => {
     const headers = config?.headers;
     console.log(url);
-    return await axios.get(`${baseUrl}/${url}`, {
+    return await axios.get(`${url}`, {
       ...config,
-      headers: {
-        ...headers,
-        "Access-Control-Allow-Origin": process.env.REACT_APP_APP_URL,
-      },
     });
   },
 };
